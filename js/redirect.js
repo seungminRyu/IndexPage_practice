@@ -1,5 +1,5 @@
 const $main = document.querySelector("main");
-let targetCode;
+let targetCode; //결제한 제품의 결제코드
 
 // 구매한 제품의 결제코드를 변수에 저장한 뒤, 배열에서 삭제 후 업데이트 한다.
 function updateStock() {
@@ -17,7 +17,7 @@ function updateStock() {
     }
 }
 
-// 구매한 제품의 결제코드를 애니메이션을 보여준 뒤 렌더링 한다.
+// 로딩 애니메이션을 보여준 뒤 구매한 제품의 결제코드를 렌더링 한다.
 function renderAfterPage() {
     setTimeout(() => {
         $main.innerHTML = 

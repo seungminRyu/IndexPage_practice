@@ -3,11 +3,11 @@ const $productType = document.querySelector(".type");
 const $productImg = document.querySelectorAll(".img");
 const $modal = document.querySelector(".modal");
 const $btn = document.querySelector(".btn");
-const REDIRECT_URL = "https://seungminryu.github.io/SmartMaskVender/redirect";
-var IMP = window.IMP;
 
 // 카카오페이 결제 api, 카카오 페이로 결제요청을 보낸다.
 function requestPay() {
+    const REDIRECT_URL = "https://seungminryu.github.io/SmartMaskVender/redirect";
+    var IMP = window.IMP;
     IMP.init('imp85600338');
     IMP.request_pay({
         pg : 'kakaopay',
@@ -55,9 +55,9 @@ function renderMaskInfo() {
     }
 }
 
-// 요소들 이벤트 셋팅
+// 요소들의 이벤트 셋팅한다.
 function setElementEvent() {
-    // 모달을 띄우고 끈다.
+    // 모달의 활성화 및 비활성화 이벤트
     $productImg[0].addEventListener("click", () => {
         $modal.classList.toggle("modal-active");
     });
@@ -65,7 +65,7 @@ function setElementEvent() {
         $modal.classList.toggle("modal-active");
     });
 
-    // 결제하기 버튼을 누를 경우 Api 호출
+    // 결제하기 버튼을 누를 경우 Api 호출 이벤트
     $btn.addEventListener("click", () => {
         requestPay();
     });

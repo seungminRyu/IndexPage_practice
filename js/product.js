@@ -19,7 +19,7 @@ function setMaskStock() {
     sessionStorage.setItem("maskCode2", JSON.stringify(["0000", "0000", "0000", 9999, 3333]));
 }
 
-// 제품박스 클릭 시 제품 자세히보기로 이동;
+// 제품박스 클릭 시 제품 자세히보기로 이동하는 이벤트
 function onClickBox(id) {
     typeValue = id;
     location.href = `productDetail.html?type=${typeValue}`;
@@ -27,7 +27,8 @@ function onClickBox(id) {
 
 function init() {
     // 세션스토리지에 결제코드 없을경우 결제코드 셋팅
-    if (null === sessionStorage.getItem("maskCode1")) {
+    if (null === sessionStorage.getItem("maskCode1") 
+        && null === sessionStorage.getItem("maskCode2")) {
         setMaskStock();
     }
     checkSoldOut();
